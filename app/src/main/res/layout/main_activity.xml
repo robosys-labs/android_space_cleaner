@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:grid="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:context="com.robosyslive.spacecleaner.MainActivity"
+        android:screenOrientation="portrait"
+        android:layout_centerHorizontal="true"
+        grid:alignmentMode="alignBounds"
+        grid:columnCount="1"
+        android:id="@+id/choice_grid"
+        android:padding="3dp"
+        grid:rowOrderPreserved="false"
+        grid:useDefaultMargins="true">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/progress_layout"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminateOnly="true"
+            />
+        <TextView
+            android:background="#00000000"
+            android:id="@+id/progress_text"
+            android:text="@string/compressing_files"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/progress_bar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+    </RelativeLayout>
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/btn_pictures"
+        android:layout_height="0dp"
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1"
+        grid:layout_gravity="fill"
+        android:text="@string/pictures" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/btn_videos"
+        android:layout_height="0dp"
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1"
+        grid:layout_gravity="fill"
+        android:text="@string/videos" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/btn_music"
+        android:layout_height="0dp"
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1"
+        grid:layout_gravity="fill"
+        android:text="@string/music" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/btn_documents"
+        android:layout_height="0dp"
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1"
+        grid:layout_gravity="fill"
+        android:text="@string/documents" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/btn_exit"
+        android:layout_height="0dp"
+        grid:layout_columnWeight="1"
+        grid:layout_rowWeight="1"
+        grid:layout_gravity="fill"
+        android:text="Exit" />
+    </android.support.v7.widget.GridLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="0"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation" />
+</LinearLayout>

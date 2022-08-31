@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <PreferenceCategory android:title="General">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="delete_duplicates"
+            android:title="@string/delete_duplicates"
+            android:summary="@string/delete_duplicate_files" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="compress_pictures"
+            android:summary="@string/optimize_picture_smaller"
+            android:title="@string/compress_pictures"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="vibrate"
+            android:summary="@string/vibrate_when_complete"
+            android:title="@string/vibrate_on_done" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Pictures">
+        <ListPreference
+            android:key="picture_quality"
+            android:summary="@string/picture_quality_to_use"
+            android:title="@string/picture_quality"
+            android:defaultValue="95"
+            android:dialogTitle="picture quality"
+            android:entries="@array/pref_picture_quality_entries"
+            android:entryValues="@array/pref_picture_quality_values" />
+
+        <EditTextPreference
+            android:defaultValue="@string/resized"
+            android:key="resized_name"
+            android:summary="@string/name_to_append"
+            android:title="@string/resized_name" />
+
+        <EditTextPreference
+            android:defaultValue="180000"
+            android:key="default_ignore_size"
+            android:summary="@string/skip_compress_pictures"
+            android:title="@string/picture_ignore_size"/>
+
+        <EditTextPreference
+            android:defaultValue="2000"
+            android:key="max_height_width"
+            android:summary="@string/max_height_width_after_resize"
+            android:title="@string/max_height_width" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
